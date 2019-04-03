@@ -26,5 +26,12 @@ namespace NothingSpecial.Controllers
 
             return View();
         }
+
+        public ActionResult TestForm()
+        {
+            ViewBag.Message = "The test form page.";
+
+            return View();
+        }
     }
 }
