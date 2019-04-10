@@ -1,0 +1,100 @@
+﻿@model IEnumerable<NothingSpecial.Models.OpenJobModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Message)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TechNotes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estimate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FinalCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkComplete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssetModel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssetType)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TechNotes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estimate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FinalCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkComplete)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssetModel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssetType)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.JobID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.JobID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.JobID })
+        </td>
+    </tr>
+}
+
+</table>
