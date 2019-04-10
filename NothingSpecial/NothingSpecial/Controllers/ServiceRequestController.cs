@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 
@@ -34,9 +35,9 @@ namespace NothingSpecial.Controllers
             if (ModelState.IsValid)
             {
 
-                // The controller adds the filled up model object to the database.
-                db.OpenJobs.Add(openJobModel);
-                db.SaveChanges();
+                // The controller adds the filled up model object to the database. TODO: REMOVE THIS
+                // db.OpenJobs.Add(openJobModel);
+                // db.SaveChanges();
 
                 // Return to the ServiceRequestDetails page, and send in a filled up openJobModel object to the Redirect.
                 return RedirectToAction("ServiceRequestDetails", openJobModel);
@@ -52,6 +53,36 @@ namespace NothingSpecial.Controllers
             if (openJobModel == null)
             {
                 throw new ArgumentNullException(nameof(openJobModel));
+            }
+            else {
+
+                // Setting the object member variables to local variables
+                var fullName = openJobModel.FirstName.ToString() + openJobModel.LastName.ToString();
+                var email = openJobModel.Email.ToString();
+                var phoneNumber = openJobModel.PhoneNumber.ToString();
+                var date = openJobModel.Date.ToString();
+                var message = openJobModel.Message.ToString();
+
+                // String format for message body
+                var body = "<h1>Lead details</h1><br><br> <p>{0}</p><br> <p>{1}</p><br> <p>{2}</p><br> <p>{3}</p><br> <p>{4}</p><br>";
+
+                // Creating a Smtp client object to send the email in
+                SmtpClient client = new SmtpClient();
+
+                // Create a new email to send through the client
+                MailMessage mailMessage = new MailMessage();
+
+                // Email to send the message to
+                mailMessage.To.Add("technicianleads@nothingspecial.com");
+
+                // Subject for the email message
+                mailMessage.Subject = "Service Request lead sent " + DateTime.Now.ToString();
+
+                // Body for the email message, containing the lead information
+                mailMessage.Body = string.Format(body, fullName, email, phoneNumber, date, message);
+
+                // Send the email
+                client.Send(mailMessage);
             }
 
             // Return the view with the filled up openJobModel object.
