@@ -1,0 +1,13 @@
+﻿body {
+    width: 80%;
+    margin: auto;
+    background-image: url('../Images/circuitBoard.jpg');
+}
+
+.body-content {
+    padding: 2em;
+    border: 3px solid #555;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+    background-color: rgba(128, 128, 128, 0.4);
+}
