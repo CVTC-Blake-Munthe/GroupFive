@@ -56,6 +56,7 @@ namespace NothingSpecial.Controllers
             }
             else {
 
+                // Notes: https://stackoverflow.com/questions/26784366/how-to-send-email-from-mvc-5-application
                 // Setting the object member variables to local variables
                 var fullName = openJobModel.FirstName.ToString() + openJobModel.LastName.ToString();
                 var email = openJobModel.Email.ToString();
