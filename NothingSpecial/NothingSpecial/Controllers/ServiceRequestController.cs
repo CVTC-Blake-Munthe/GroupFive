@@ -49,13 +49,16 @@ namespace NothingSpecial.Controllers
         // GET: Service Request Details view
         public ActionResult ServiceRequestDetails(OpenJobModel openJobModel)
         {
+            /* ********** Uncomment when the dummy email account is made **********
+             
             // If the openJobModel is empty, throw an exception.
             if (openJobModel == null)
             {
                 throw new ArgumentNullException(nameof(openJobModel));
             }
             else {
-
+                
+                 
                 // Notes: https://stackoverflow.com/questions/26784366/how-to-send-email-from-mvc-5-application
                 // Setting the object member variables to local variables
                 var fullName = openJobModel.FirstName.ToString() + openJobModel.LastName.ToString();
@@ -85,6 +88,9 @@ namespace NothingSpecial.Controllers
                 // Send the email
                 client.Send(mailMessage);
             }
+             
+            */
+
 
             // Return the view with the filled up openJobModel object.
             return View(openJobModel);

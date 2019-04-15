@@ -21,20 +21,24 @@ namespace NothingSpecial.Models
 
         [StringLength(50)]
         [Required]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [StringLength(50)]
         [Required]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
         [EmailAddress]
         [Required]
+        [Display(Name = "Email Address")]
         public string Email { get; set; }
 
 
         [Required(ErrorMessage = "You must provide a phone number")]
         [DataType(DataType.PhoneNumber)]
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
+        [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
         [DataType(DataType.Date)]
@@ -46,12 +50,21 @@ namespace NothingSpecial.Models
         
         // Technician data
         [StringLength(100000)]
+        [Display(Name = "Tech Notes")]
         public string TechNotes { get; set; }
 
         public double Estimate { get; set; }
+
+        [Display(Name = "Final Cost")]
         public double FinalCost { get; set; }
+
+        [Display(Name = "Work Complete")]
         public bool WorkComplete { get; set; }
+
+        [Display(Name = "Asset Model")]
         public string AssetModel { get; set; }
+
+        [Display(Name = "Asset Type")]
         public string AssetType { get; set; }
     }
 }
