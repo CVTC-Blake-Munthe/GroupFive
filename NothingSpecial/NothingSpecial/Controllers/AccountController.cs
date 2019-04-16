@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using NothingSpecial.Models;
+using BotDetect.Web.Mvc;
 
 namespace NothingSpecial.Controllers
 {
@@ -65,6 +66,7 @@ namespace NothingSpecial.Controllers
         // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
+        [CaptchaValidation("CaptchaCode", "CustomCaptcha", "Incorrect CAPTCHA code!")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
@@ -76,6 +78,10 @@ namespace NothingSpecial.Controllers
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+
+            // Use this to reset the captcha after the submit button has been pressed... This may need to be moved to the SignInStatus.Success case.
+            MvcCaptcha.ResetCaptcha("CustomCaptcha");
+
             switch (result)
             {
                 case SignInStatus.Success:

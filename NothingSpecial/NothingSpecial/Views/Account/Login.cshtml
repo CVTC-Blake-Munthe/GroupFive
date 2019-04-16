@@ -1,10 +1,18 @@
-﻿@using NothingSpecial.Models
+﻿@using BotDetect.Web.Mvc;
+@using NothingSpecial.Models;
 @model LoginViewModel
+
+
 @{
-    ViewBag.Title = "Log in";
+    ViewBag.Title = "Technician Log in";
 }
 
-<h2>@ViewBag.Title.</h2>
+@section HeadIncludes {
+    <link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl"
+          rel="stylesheet" type="text/css" />
+}
+
+<h2>@ViewBag.Title</h2>
 <div class="row">
     <div class="col-md-8">
         <section id="loginForm">
@@ -29,8 +37,11 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-
+                    <div class="col-md-10">
+                        @{ MvcCaptcha customCaptcha = NothingSpecial.Helpers.CaptchaHelper.GetCustomCaptcha();}
+                        @Html.Captcha(customCaptcha)
+                        @Html.TextBox("captchaTextBox")
+                        
                     </div>
                 </div>
                 <div class="form-group">
@@ -40,7 +51,7 @@
                 </div>
             }
         </section>
-
+    </div>
 </div>
 
 @section Scripts {

@@ -357,3 +357,8 @@ C:\Users\Blake\Source\Repos\GroupFive\NothingSpecial\NothingSpecial\obj\Debug\No
 C:\Users\Blake\Source\Repos\GroupFive\NothingSpecial\NothingSpecial\obj\Debug\NothingSpecial.csproj.CopyComplete
 C:\Users\Blake\Source\Repos\GroupFive\NothingSpecial\NothingSpecial\obj\Debug\NothingSpecial.dll
 C:\Users\Blake\Source\Repos\GroupFive\NothingSpecial\NothingSpecial\obj\Debug\NothingSpecial.pdb
+C:\Users\matt\Documents\GitHub\GroupFive\NothingSpecial\NothingSpecial\bin\BotDetect.dll
+C:\Users\matt\Documents\GitHub\GroupFive\NothingSpecial\NothingSpecial\bin\BotDetect.Web.Mvc.dll
+C:\Users\matt\Documents\GitHub\GroupFive\NothingSpecial\NothingSpecial\bin\System.Data.SQLite.dll
+C:\Users\matt\Documents\GitHub\GroupFive\NothingSpecial\NothingSpecial\bin\System.Data.SQLite.xml
+C:\Users\matt\Documents\GitHub\GroupFive\NothingSpecial\NothingSpecial\bin\System.Data.SQLite.dll.config

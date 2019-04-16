@@ -7,7 +7,7 @@
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/customcss")
     @Scripts.Render("~/bundles/modernizr")
-
+    @RenderSection("HeadIncludes", required: false) 
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
