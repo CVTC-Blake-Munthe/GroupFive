@@ -246,6 +246,7 @@
     <Content Include="fonts\Orbitron\orbitron-bold.otf" />
     <Content Include="fonts\Orbitron\orbitron-light.otf" />
     <Content Include="fonts\Orbitron\orbitron-medium.otf" />
+    <Content Include="fonts\Azonix.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

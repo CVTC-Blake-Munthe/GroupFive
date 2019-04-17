@@ -1,7 +1,27 @@
-﻿body {
+﻿@font-face {
+    font-family: 'azonix';
+    src: url('../fonts/Azonix.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+head{
+    font-family: 'azonix';
+}
+
+h2 {
+    font-family: 'azonix';
+}
+
+h4 {
+    font-family: 'azonix';
+}
+
+body {
     width: 80%;
     margin: auto;
     background-image: url('../Images/circuitBoard.jpg');
+    font-family: 'azonix';
 }
 
 .body-content {
