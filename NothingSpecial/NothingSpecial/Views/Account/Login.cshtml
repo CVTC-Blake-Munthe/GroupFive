@@ -41,6 +41,9 @@
                         @{ MvcCaptcha customCaptcha = NothingSpecial.Helpers.CaptchaHelper.GetCustomCaptcha();}
                         @Html.Captcha(customCaptcha)
                         @Html.TextBox("captchaTextBox")
+                        @Html.ValidationMessage("captchaTextBox")
+
+                        
                         
                     </div>
                 </div>

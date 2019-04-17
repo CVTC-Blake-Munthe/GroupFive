@@ -84,21 +84,35 @@ namespace NothingSpecial.Controllers
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
 
-            // Use this to reset the captcha after the submit button has been pressed... This may need to be moved to the SignInStatus.Success case.
-            MvcCaptcha.ResetCaptcha("CustomCaptcha");
 
-            switch (result)
+            if (MvcCaptcha.IsCaptchaSolved("CustomCaptcha"))
             {
-                case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
-                case SignInStatus.LockedOut:
-                    return View("Lockout");
-                case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
-                case SignInStatus.Failure:
-                default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
-                    return View(model);
+
+                // Use this to reset the captcha after the submit button has been pressed... This may need to be moved to the SignInStatus.Success case.
+                MvcCaptcha.ResetCaptcha("CustomCaptcha");
+
+                switch (result)
+                {
+                    case SignInStatus.Success:
+                        return RedirectToLocal(returnUrl);
+                    case SignInStatus.LockedOut:
+                        return View("Lockout");
+                    case SignInStatus.RequiresVerification:
+                        return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+
+                    case SignInStatus.Failure:
+                    default:
+
+                        ModelState.AddModelError("", "Invalid login attempt.");
+                        return View(model);
+                }
+            } else { 
+                // Use this to reset the captcha after the submit button has been pressed... This may need to be moved to the SignInStatus.Success case.
+                MvcCaptcha.ResetCaptcha("CustomCaptcha");
+
+
+                ModelState.AddModelError("", "Invalid login attempt.");
+                return View(model);
             }
         }
 
