@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using NothingSpecial.Models;
 using BotDetect.Web.Mvc;
+using Microsoft.Security.Application;
 
 namespace NothingSpecial.Controllers
 {
@@ -66,7 +67,7 @@ namespace NothingSpecial.Controllers
         // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
-        [CaptchaValidation("CaptchaCode", "CustomCaptcha", "Incorrect CAPTCHA code!")]
+        [CaptchaValidation("captchaTextBox", "CustomCaptcha", "Incorrect CAPTCHA code!")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
@@ -74,6 +75,10 @@ namespace NothingSpecial.Controllers
             {
                 return View(model);
             }
+
+            // This needs to be tested to see if it actually encodes the data for preventing XSS attacks. 
+            model.Email = Encoder.HtmlEncode(model.Email);
+            model.Password = Encoder.HtmlEncode(model.Password);
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true

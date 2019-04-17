@@ -362,3 +362,7 @@ C:\Users\matt\Documents\GitHub\GroupFive\NothingSpecial\NothingSpecial\bin\BotDe
 C:\Users\matt\Documents\GitHub\GroupFive\NothingSpecial\NothingSpecial\bin\System.Data.SQLite.dll
 C:\Users\matt\Documents\GitHub\GroupFive\NothingSpecial\NothingSpecial\bin\System.Data.SQLite.xml
 C:\Users\matt\Documents\GitHub\GroupFive\NothingSpecial\NothingSpecial\bin\System.Data.SQLite.dll.config
+C:\Users\matt\Documents\GitHub\GroupFive\NothingSpecial\NothingSpecial\bin\AntiXssLibrary.dll
+C:\Users\matt\Documents\GitHub\GroupFive\NothingSpecial\NothingSpecial\bin\HtmlSanitizationLibrary.dll
+C:\Users\matt\Documents\GitHub\GroupFive\NothingSpecial\NothingSpecial\bin\AntiXssLibrary.xml
+C:\Users\matt\Documents\GitHub\GroupFive\NothingSpecial\NothingSpecial\bin\HtmlSanitizationLibrary.xml
