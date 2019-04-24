@@ -30,6 +30,7 @@ body {
     border-bottom-left-radius: 2em;
     border-bottom-right-radius: 2em;
     background-color: rgba(128, 128, 128, 0.4);
+    overflow-x: auto;
 }
 
 tr:hover {
