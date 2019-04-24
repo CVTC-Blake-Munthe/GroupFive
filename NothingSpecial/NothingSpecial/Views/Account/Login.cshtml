@@ -39,12 +39,12 @@
                 <div class="form-group">
                     <div class="col-md-10">
                         @{ MvcCaptcha customCaptcha = NothingSpecial.Helpers.CaptchaHelper.GetCustomCaptcha();}
-                        @Html.Captcha(customCaptcha)
+                        @Html.Captcha(customCaptcha)<br />
                         @Html.TextBox("captchaTextBox")
                         @Html.ValidationMessage("captchaTextBox")
 
-                        
-                        
+
+
                     </div>
                 </div>
                 <div class="form-group">
