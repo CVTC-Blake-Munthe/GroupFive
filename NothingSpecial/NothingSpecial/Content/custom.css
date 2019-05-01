@@ -45,6 +45,8 @@ tr:hover {
 
 table {
     border-collapse: collapse;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    background-color: gray;
 }
 
 .table {
