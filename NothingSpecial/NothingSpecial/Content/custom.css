@@ -5,6 +5,10 @@
     font-style: normal;
 }
 
+a {
+    color: yellow;
+}
+
 head{
     font-family: 'azonix';
 }
@@ -29,7 +33,7 @@ body {
     border: 3px solid #555;
     border-bottom-left-radius: 2em;
     border-bottom-right-radius: 2em;
-    background-color: rgba(128, 128, 128, 0.4);
+    background-color: rgba(128, 128, 128, 0.9);
     overflow-x: auto;
     overflow-y: auto;
     height: 840px;
@@ -41,11 +45,14 @@ tr:hover {
 
 table {
     border-collapse: collapse;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    background-color: gray;
 }
 
 .table {
     max-width: 80%;
 }
+
 table, th, td {
     border: 1px solid black;
 }
