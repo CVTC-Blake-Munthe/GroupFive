@@ -29,6 +29,8 @@ body {
     width: 100%;
     margin: auto;
     background-image: url('../Images/circuitBoard.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: 'azonix';
 }
 
