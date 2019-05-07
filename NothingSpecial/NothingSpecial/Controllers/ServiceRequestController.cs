@@ -49,7 +49,7 @@ namespace NothingSpecial.Controllers
         // GET: Service Request Details view
         public ActionResult ServiceRequestDetails(OpenJobModel openJobModel)
         {
-            /* ********** Uncomment when the dummy email account is made **********
+            
              
             // If the openJobModel is empty, throw an exception.
             if (openJobModel == null)
@@ -68,7 +68,7 @@ namespace NothingSpecial.Controllers
                 var message = openJobModel.Message.ToString();
 
                 // String format for message body
-                var body = "<h1>Lead details</h1><br><br> <p>{0}</p><br> <p>{1}</p><br> <p>{2}</p><br> <p>{3}</p><br> <p>{4}</p><br>";
+                var body = "Lead details: {0} // {1} // {2} // {3} // {4}";
 
                 // Creating a Smtp client object to send the email in
                 SmtpClient client = new SmtpClient();
@@ -76,8 +76,8 @@ namespace NothingSpecial.Controllers
                 // Create a new email to send through the client
                 MailMessage mailMessage = new MailMessage();
 
-                // Email to send the message to
-                mailMessage.To.Add("technicianleads@nothingspecial.com");
+                // Email to send the message to (hardcoded)
+                mailMessage.To.Add("mrude10@student.cvtc.edu");
 
                 // Subject for the email message
                 mailMessage.Subject = "Service Request lead sent " + DateTime.Now.ToString();
@@ -89,7 +89,7 @@ namespace NothingSpecial.Controllers
                 client.Send(mailMessage);
             }
              
-            */
+            
 
 
             // Return the view with the filled up openJobModel object.
