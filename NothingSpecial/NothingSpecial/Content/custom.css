@@ -17,6 +17,10 @@ h2 {
     font-family: 'azonix';
 }
 
+h3 {
+    font-family: 'azonix';
+}
+
 h4 {
     font-family: 'azonix';
 }
@@ -25,6 +29,8 @@ body {
     width: 100%;
     margin: auto;
     background-image: url('../Images/circuitBoard.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: 'azonix';
 }
 
@@ -40,7 +46,7 @@ body {
 }
 
 tr:hover {
-    background-color: #f5f5f5;
+    background-color: #aaa;
 }
 
 table {
