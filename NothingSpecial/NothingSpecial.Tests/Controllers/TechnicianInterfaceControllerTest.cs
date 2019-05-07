@@ -5,6 +5,7 @@ using NothingSpecial;
 using System.Web.Mvc;
 using NothingSpecial.Models;
 using Moq;
+using System.Web.UI;
 
 namespace NothingSpecial.Tests.Controllers
 {
@@ -32,13 +33,15 @@ namespace NothingSpecial.Tests.Controllers
         public void Details()
         {
             // Arrange 
-
+            TechnicianInterfaceController controller = new TechnicianInterfaceController();
 
 
             // Act
+            ViewResult result = controller.Details(1) as ViewResult;
+            
 
             // Assert
-           
+            Assert.IsNotNull(result);
 
         }
 
@@ -60,10 +63,13 @@ namespace NothingSpecial.Tests.Controllers
         public void Edit()
         {
             // Arrange 
+            TechnicianInterfaceController controller = new TechnicianInterfaceController();
 
             // Act
+            ViewResult result = controller.Edit(1) as ViewResult;
 
             // Assert
+            Assert.IsNotNull(result);
 
         }
 
@@ -71,12 +77,13 @@ namespace NothingSpecial.Tests.Controllers
         public void Delete()
         {
             // Arrange 
-         
+            TechnicianInterfaceController controller = new TechnicianInterfaceController();
 
             // Act
-          
+            ViewResult result = controller.Delete(999999999) as ViewResult;
 
             // Assert
+            Assert.IsNull(result);
 
 
         }
