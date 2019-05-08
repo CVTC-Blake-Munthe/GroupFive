@@ -21,6 +21,10 @@ h3 {
     font-family: 'azonix';
 }
 
+#delete {
+    color: yellow;
+}
+
 h4 {
     font-family: 'azonix';
 }
