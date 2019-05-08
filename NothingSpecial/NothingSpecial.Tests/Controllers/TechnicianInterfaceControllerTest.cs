@@ -12,8 +12,8 @@ namespace NothingSpecial.Tests.Controllers
     [TestClass]
     public class TechnicianInterfaceControllerTest
     {
-
-        OpenJobModel ojm = new OpenJobModel();
+        
+        OpenJobModel ojm = new OpenJobModel() {  JobID = 1, FirstName = "Bobbert" };
 
         [TestMethod]
         public void Index()
@@ -30,11 +30,12 @@ namespace NothingSpecial.Tests.Controllers
         }
 
         [TestMethod]
-        public void Details()
+        public void Details() 
         {
             // Arrange 
+            var context = new OpenJobsContext();
+            context.OpenJobs.Add(ojm);
             TechnicianInterfaceController controller = new TechnicianInterfaceController();
-
 
             // Act
             ViewResult result = controller.Details(1) as ViewResult;
@@ -49,6 +50,8 @@ namespace NothingSpecial.Tests.Controllers
         public void Create()
         {
             // Arrange 
+            var context = new OpenJobsContext();
+            context.OpenJobs.Add(ojm);
             TechnicianInterfaceController controller = new TechnicianInterfaceController();
 
             // Act
@@ -60,9 +63,11 @@ namespace NothingSpecial.Tests.Controllers
         }
 
         [TestMethod]
-        public void Edit()
+        public void Edit() 
         {
             // Arrange 
+            var context = new OpenJobsContext();
+            context.OpenJobs.Add(ojm);
             TechnicianInterfaceController controller = new TechnicianInterfaceController();
 
             // Act
@@ -74,16 +79,18 @@ namespace NothingSpecial.Tests.Controllers
         }
 
         [TestMethod]
-        public void Delete()
+        public void Delete() 
         {
             // Arrange 
+            var context = new OpenJobsContext();
+            context.OpenJobs.Add(ojm);
             TechnicianInterfaceController controller = new TechnicianInterfaceController();
 
             // Act
-            ViewResult result = controller.Delete(999999999) as ViewResult;
+            ViewResult result = controller.Delete(1) as ViewResult;
 
             // Assert
-            Assert.IsNull(result);
+            Assert.IsNotNull(result);
 
 
         }
