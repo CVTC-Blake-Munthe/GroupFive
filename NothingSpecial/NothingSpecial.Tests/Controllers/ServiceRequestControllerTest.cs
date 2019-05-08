@@ -30,7 +30,21 @@ namespace NothingSpecial.Tests.Controllers
             // Arrange 
             ServiceRequestController controller = new ServiceRequestController();
 
-            OpenJobModel ojm = new OpenJobModel();
+            OpenJobModel ojm = new OpenJobModel
+            {
+                FirstName = "Albumius",
+                LastName = "Artistus",
+                Email = "1234@gmail.com",
+                PhoneNumber = "715-555-5555",
+                Date = DateTime.Now,
+                Message = "hackle frackle",
+                TechNotes = "I am a technote",
+                Estimate = 10.00,
+                FinalCost = 10.00,
+                WorkComplete = true,
+                AssetModel = "1337",
+                AssetType = "Laptop"
+            }; ;
 
             // Act
             ViewResult result = controller.ServiceRequestDetails(ojm) as ViewResult;
