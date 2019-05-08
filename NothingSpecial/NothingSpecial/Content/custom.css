@@ -21,6 +21,10 @@ h3 {
     font-family: 'azonix';
 }
 
+#delete {
+    color: yellow;
+}
+
 h4 {
     font-family: 'azonix';
 }
@@ -53,6 +57,7 @@ table {
     border-collapse: collapse;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     background-color: gray;
+    margin-top: .5em;
 }
 
 .table {
