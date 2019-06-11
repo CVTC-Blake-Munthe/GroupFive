@@ -1,4 +1,4 @@
-# GroupFive
+# Computer Work Orders & Repair Website
 Group Five Developer Capstone Project
 
 This is a asp.net web application that is used to keep track of open work orders and repairs for a computer shop. This project
